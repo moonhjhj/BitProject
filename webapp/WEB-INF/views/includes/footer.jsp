@@ -203,14 +203,14 @@
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-  
-  
-  
-</div>
-<!-- ./wrapper -->
+  <%--<div class="control-sidebar-bg"></div>--%>
+  <%----%>
+  <%----%>
+  <%----%>
+<%--</div>--%>
+<%--<!-- ./wrapper -->--%>
 
-<c:import url="/WEB-INF/views/includes/script.jsp"></c:import>
-</body>
-</html>
+<%--<c:import url="/WEB-INF/views/includes/script.jsp"></c:import>--%>
+<%--</body>--%>
+<%--</html>--%>
   
