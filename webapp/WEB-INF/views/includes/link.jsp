@@ -8,17 +8,17 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bower_components/Ionicons/css/ionicons.css">
    <!-- daterange picker -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap datepicker -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
   <!-- iCheck for checkboxes and radio inputs -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/plugins/iCheck/all.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugins/iCheck/all.css">
   <!-- Bootstrap Color Picker -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css">
   <!-- Bootstrap time Picker -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/plugins/timepicker/bootstrap-timepicker.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugins/timepicker/bootstrap-timepicker.css">
   <!-- Select2 -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/bower_components/select2/dist/css/select2.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bower_components/select2/dist/css/select2.css">
   
   
   
