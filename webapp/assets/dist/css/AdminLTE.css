@@ -20,7 +20,7 @@ body {
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: auto;
 }
 /* Layout */
@@ -345,12 +345,12 @@ a:focus {
 }
 @media (max-width: 991px) {
   .content-header > .breadcrumb {
-    position: relative;
-    margin-top: 5px;
-    top: 0;
-    right: 0;
-    float: none;
-    background: #d2d6de;
+    /*position: relative;*/
+    /*margin-top: 5px;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    float: top;
+    /*background: #d2d6de;*/
     padding-left: 10px;
   }
   .content-header > .breadcrumb li:before {
@@ -383,8 +383,8 @@ a:focus {
   }
   .main-header .logo,
   .main-header .navbar {
-    width: 100%;
-    float: none;
+    /*width: 100%;*/
+    float: top;
   }
   .main-header .navbar {
     margin: 0;

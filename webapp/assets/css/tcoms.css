@@ -16,7 +16,7 @@
 }
 
 .content-wrapper {
-	margin-left: 180px
+	margin-left: 180px;
 }
 
 .main-header .logo {
@@ -217,8 +217,20 @@ tbody > tr > th{
 
 
 
-
-
+/*side-bar collapse 방지*/
+@media (max-width: 767px) {
+	.main-sidebar {
+		padding-top: 50px;
+	}
+}
+@media (max-width: 767px) {
+	.main-sidebar {
+		-webkit-transform: translate(0px, 0);
+		-ms-transform: translate(-230px, 0);
+		-o-transform: translate(-230px, 0);
+		transform: translate(0px, 0);
+	}
+}
 
 
 

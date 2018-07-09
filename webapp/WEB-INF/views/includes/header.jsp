@@ -31,17 +31,22 @@
       		<!-- logo for regular state and mobile devices -->
       		<span class="logo-lg"><b>TCOMS ver2</b></span>
     	</a>
-    
+
+
     	<!-- Header Navbar: style can be found in header.less -->
     	<nav class="navbar navbar-static-top">
+
+			<div>
+				<button type="button" class="btn btn-default pull-right btnLogout " style="margin-right: 50px">로그아웃</button>
+			</div>
       	
 	      	<!-- 왼쪽메뉴 토클버튼 -->
-	      	<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-	        	<span class="sr-only">Toggle navigation</span>
-	        	<span class="icon-bar"></span>
-	        	<span class="icon-bar"></span>
-	        	<span class="icon-bar"></span>
-	      	</a>
+	      	<%--<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">--%>
+	        	<%--<span class="sr-only">Toggle navigation</span>--%>
+	        	<%--<span class="icon-bar"></span>--%>
+	        	<%--<span class="icon-bar"></span>--%>
+	        	<%--<span class="icon-bar"></span>--%>
+	      	<%--</a>--%>
 			<!-- /.왼쪽메뉴 토클버튼 -->
       		
       		
@@ -57,10 +62,11 @@
       		
       		
       		<!-- 로그아웃 버튼 -->
-      		<div class="navbar-custom-menu">
-      			<button type="button" class="btn btn-default pull-right btnLogout ">로그아웃</button>
-      		</div>
-      		
+      		<%--<div class="navbar-custom-menu">--%>
+      			<%--<button type="button" class="btn btn-default pull-right btnLogout ">로그아웃</button>--%>
+      		<%--</div>--%>
+      		<%----%>
     	</nav>
 	</header>
+
 	<!-- /.해더끝 -->
