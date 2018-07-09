@@ -31,26 +31,26 @@
     	<!-- Header Navbar: style can be found in header.less -->
     	<nav class="navbar navbar-static-top">
       	
-	      	<!-- 왼쪽메뉴 토클버튼 -->
-	      	<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-	        	<span class="sr-only">Toggle navigation</span>
-	        	<span class="icon-bar"></span>
-	        	<span class="icon-bar"></span>
-	        	<span class="icon-bar"></span>
-	      	</a>
+	      	<%--<!-- 왼쪽메뉴 토클버튼 -->--%>
+	      	<%--<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">--%>
+	        	<%--<span class="sr-only">Toggle navigation</span>--%>
+	        	<%--<span class="icon-bar"></span>--%>
+	        	<%--<span class="icon-bar"></span>--%>
+	        	<%--<span class="icon-bar"></span>--%>
+	      	<%--</a>--%>
 			<!-- /.왼쪽메뉴 토클버튼 -->
       		
       		
-      		
-      		<!-- 환경설정 버튼 -->
-      		<div class="navbar-custom-menu">
-        		<ul class="nav navbar-nav">
-	          		<li>
-	            		<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-	          		</li>
-        		</ul>
-      		</div>
-      		
+      		<%----%>
+      		<%--<!-- 환경설정 버튼 -->--%>
+      		<%--<div class="navbar-custom-menu">--%>
+        		<%--<ul class="nav navbar-nav">--%>
+	          		<%--<li>--%>
+	            		<%--<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>--%>
+	          		<%--</li>--%>
+        		<%--</ul>--%>
+      		<%--</div>--%>
+      		<%----%>
       		
       		<!-- 로그아웃 버튼 -->
       		<div class="navbar-custom-menu">
@@ -59,4 +59,5 @@
       		
     	</nav>
 	</header>
+
 	<!-- /.해더끝 -->
