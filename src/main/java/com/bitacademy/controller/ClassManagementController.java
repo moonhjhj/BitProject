@@ -15,6 +15,6 @@ public class ClassManagementController {
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String main(){
-        return "/classmanagement/classmanagement";
+        return "/class/classmanagement";
     }
 }

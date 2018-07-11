@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+ .input-xs{ 
+  	height:25px !important; 
+  	padding: 0px 3px 0px 3px;  
+  	border-color: #d2d6de;
+  	border: 1px solid #ccc;
+ } 
+
+ .curriBox{
+ 	border-color: #d2d6de;
+  	border: 1px solid #ccc;
+ }
