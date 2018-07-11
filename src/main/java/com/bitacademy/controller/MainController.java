@@ -40,4 +40,6 @@ public class MainController {
 		System.out.println("/index");
 		return "ex/index_renew4";
 	}
+
+
 }
