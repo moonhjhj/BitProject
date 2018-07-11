@@ -17,7 +17,7 @@ public class SubjectController {
     @RequestMapping("/main")
     public String mai1n2(){
         System.out.println("/index");
-        return "ex/subject";
+        return "curridesign/subject";
     }
     @RequestMapping(value = "/add",method = RequestMethod.GET)
     public String insert(@ModelAttribute SubjectVo subjectVo){
