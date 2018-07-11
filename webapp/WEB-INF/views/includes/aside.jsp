@@ -19,7 +19,7 @@
 	            	</span>
 	          	</a>
 	          	<ul class="treeview-menu" style="display: block">
-	            	<li><a href="../../index.html"><i class="fa fa-circle-o"></i> 과목관리</a></li>
+	            	<li><a href="/subject/main"><i class="fa fa-circle-o"></i> 과목관리</a></li>
 	            	<li><a href="../../index2.html"><i class="fa fa-circle-o"></i> 패키지관리</a></li>
 	          	</ul>
 	        </li>
@@ -32,8 +32,8 @@
 	            	</span>
 	          	</a>
 	          	<ul class="treeview-menu" style="display: block">
-	            	<li><a href="../../index.html"><i class="fa fa-circle-o"></i> 교육과정관리</a></li>
-	            	<li><a href="../../index2.html"><i class="fa fa-circle-o"></i> 지원자관리</a></li>
+	            	<li><a href="/curri/"><i class="fa fa-circle-o"></i> 교육과정관리</a></li>
+	            	<li><a href="/applicant/"><i class="fa fa-circle-o"></i> 지원자관리</a></li>
 	          	</ul>
 	        </li>
         
@@ -57,7 +57,7 @@
 	            	</span>
 	          	</a>
 	          	<ul class="treeview-menu" style="display: block">
-	            	<li><a href="../../index.html"><i class="fa fa-circle-o"></i> 수료생관리</a></li>
+	            	<li><a href="/completion/"><i class="fa fa-circle-o"></i> 수료생관리</a></li>
 	            	<li><a href="../../index.html"><i class="fa fa-circle-o"></i> 기업취업의뢰</a></li>
 	          	</ul>
 	        </li>
