@@ -39,7 +39,7 @@
 			<li><a href = "#">교육과정관리</a></li>
 		</ol>
 	</section>
-
+<!-- 수정 테스트 -->
 
 	<!-- Main content -->
 	<section class = "content">
