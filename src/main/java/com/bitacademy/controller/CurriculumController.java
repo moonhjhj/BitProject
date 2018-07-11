@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping(value = "/curri")
-public class CurriController {
+public class CurriculumController {
 	
 	@RequestMapping(value = "/")
 	public String curriMain() {
@@ -30,9 +30,4 @@ public class CurriController {
 		
 	}
 
-	@RequestMapping(value = "/123")
-	public String ex() {
-		
-		return "ex/123";
-	}
 }

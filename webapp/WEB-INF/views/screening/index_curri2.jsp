@@ -4,14 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>TCOMS ver2</title>
-	<!-- Tell the browser to be responsive to screen width -->
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<c:import url="/WEB-INF/views/includes/link.jsp"></c:import>
-	<c:import url="/WEB-INF/views/includes/jqgridscript.jsp"></c:import>
+<title>TCOMS ver2</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<c:import url="/WEB-INF/views/includes/link.jsp"></c:import>
+<%--<c:import url="/WEB-INF/views/includes/jqgridscript.jsp"></c:import>--%>
+<%--jqgrid 사용하는 페이지용 스크립트 임포트 태그(마지막에 스크립트 임포트 태그는 삭제할것--%>
 
 </head>
 
@@ -20,10 +21,9 @@
 <div class="wrapper">
 
 <c:import url="/WEB-INF/views/includes/header.jsp"></c:import>
-<!-- =============================================== -->
-
 <c:import url="/WEB-INF/views/includes/aside.jsp"></c:import>
-<!-- =============================================== --> 
+
+<!-- Content Wrapper. Contains page content -->
 
 <!-- Content Wrapper. Contains page content -->
 <div class = "content-wrapper">
@@ -39,7 +39,7 @@
 			<li><a href = "#">교육과정관리</a></li>
 		</ol>
 	</section>
-<!-- 수정 테스트 -->
+
 
 	<!-- Main content -->
 	<section class = "content">
@@ -95,7 +95,8 @@
 									<li class = ""><a href = "#tab_4" data-toggle = "tab">강사배정</a></li>
 									<li class = ""><a href = "#tab_5" data-toggle = "tab">강의실배정</a></li>
 									<div class = "sub-toolbox text-center">
-										<button type = "button" class = "btn btn-default pull-right">교육과정 추가</button>
+  										<a href = "${pageContext.request.contextPath }/curri/addCurri"><button type = "button" class = "btn btn-default pull-right" id = "addCurriBtn" >교육과정 추가</button></a>
+  										
 									</div>
 								</ul>
 								<!-- /.상단탭영역 -->
@@ -132,7 +133,8 @@
 				            							</td>
 				            							<th>선택패키지</th>
 				            							<td>
-				            								<button type = "button" class = "btn btn-default btn-cate pull-right" >패키지 보기</button>
+<%-- 				            								<a href = "${pageContext.request.contextPath }/curri/curriPopUp"><button type = "button" class = "btn btn-default btn-cate pull-right" id = "viewPackage" onclick = "window.location.href='/curri/curriPopUp'">패키지 보기</button></a> --%>
+				            								<button type = "button" class = "btn btn-default btn-cate pull-right" id = "viewPackage" onclick="javascript:viewPackage();">패키지 보기</button>
 				            							</td>
 				            						</tr>
 				            					</tbody>
@@ -146,67 +148,69 @@
 				            							기본정보
 				            						</div><!-- /.sub-title -->
 				            						<table class = "table table-condensed">
-				            							<tr>
-				            								<th>교육과정명</th>
-				            								<td colspan = "3"><input class = "form-control input-sm" type = "text" style = "width : 98%;"></td>
-				            								<th>과목별명</th>
-				            								<td><input type = "text" class = "form-control input-sm" style = "width : 98%;"></td>
-				            							</tr>
-				            							<tr>
-				            								<th>시작일</th>
-				            								<td>
-				            									<div class="input-group date">
-																	<input type="text" class="form-control input-sm pull-right" id="datepicker">									                  	
-									                				<div class="input-group-addon input-sm">
-									                    				<i class="fa fa-calendar"></i>
-									                  				</div>
-									               				</div>
-				            								</td>
-				            								<th>종료일</th>
-				            								<td>
-				            									<div class="input-group date">
-																	<input type="text" class="form-control input-sm pull-right" id="datepicker">									                  	
-									                				<div class="input-group-addon input-sm">
-									                    				<i class="fa fa-calendar"></i>
-									                  				</div>
-									               				</div>
-				            								</td>
-				            								<th>전형일(개강일)</th>
-				            								<td>
-				            									<div class="input-group date">
-																	<input type="text" class="form-control input-sm pull-right" id="datepicker">									                  	
-									                				<div class="input-group-addon input-sm">
-									                    				<i class="fa fa-calendar"></i>
-									                  				</div>
-									               				</div>
-				            								</td>
-				            							</tr>
-				            							<tr>
-				            								<th>강의시간</th>
-				            								<td colspan = "3"><input type = "text" class = "form-control input-sm " style = "width : 98%;" ></td>
-				            								<th>정원</th>
-				            								<td><input type = "text" class = " input-xs " >명</td>
-				            							</tr>
-				            							<tr>
-				            								<th>교육비용</th>
-				            								<td><input type = "text" class = "form-control input-sm" ></td>
-				            								<th>교육비지원</th>
-				            								<td><input type = "text" class = "form-control input-sm"></td>
-				            								<th>문의</th>
-				            								<td><input type = "text" class = "form-control input-sm"></td>
-				            							</tr>
-				            							<tr>
-				            								<th>상태</th>
-				            								<td colspan = "3">
-				            									<label class = "form-controll-static"><input class = "" type = "radio" name = "state" value = "">준비중</label>
-				            									<label class = "form-controll-static"><input class = "" type = "radio" name = "state" value = "">모집중</label>
-				            									<label class = "form-controll-static"><input class = "" type = "radio" name = "state" value = "">모집마감</label>
-				            									<label class = "form-controll-static"><input class = "" type = "radio" name = "state" value = "">수업중</label>
-				            									<label class = "form-controll-static"><input class = "" type = "radio" name = "state" value = "">종료</label>
-				            								</td>
-				            								<th>기수</th>
-				            								<td><input type = "text" class = "form-control input-sm"></td>
-				            							</tr>
+				            							<form action = "" method = "get" id = "addCurriForm">
+					            							<tr>
+					            								<th>교육과정명</th>
+					            								<td colspan = "3"><input class = "form-control input-sm" type = "text" style = "width : 98%;"></td>
+					            								<th>과목별명</th>
+					            								<td><input type = "text" class = "form-control input-sm" style = "width : 98%;"></td>
+					            							</tr>
+					            							<tr>
+					            								<th>시작일</th>
+					            								<td>
+					            									<div class="input-group date">
+																		<input type="text" class="form-control input-sm pull-right" id="datepicker">									                  	
+										                				<div class="input-group-addon input-sm">
+										                    				<i class="fa fa-calendar"></i>
+										                  				</div>
+										               				</div>
+					            								</td>
+					            								<th>종료일</th>
+					            								<td>
+					            									<div class="input-group date">
+																		<input type="text" class="form-control input-sm pull-right" id="datepicker">									                  	
+										                				<div class="input-group-addon input-sm">
+										                    				<i class="fa fa-calendar"></i>
+										                  				</div>
+										               				</div>
+					            								</td>
+					            								<th>전형일(개강일)</th>
+					            								<td>
+					            									<div class="input-group date">
+																		<input type="text" class="form-control input-sm pull-right" id="datepicker">									                  	
+										                				<div class="input-group-addon input-sm">
+										                    				<i class="fa fa-calendar"></i>
+										                  				</div>
+										               				</div>
+					            								</td>
+					            							</tr>
+					            							<tr>
+					            								<th>강의시간</th>
+					            								<td colspan = "3"><input type = "text" class = "form-control input-sm " style = "width : 98%;" ></td>
+					            								<th>정원</th>
+					            								<td><input type = "text" class = " input-xs " >명</td>
+					            							</tr>
+					            							<tr>
+					            								<th>교육비용</th>
+					            								<td><input type = "text" class = "form-control input-sm" ></td>
+					            								<th>교육비지원</th>
+					            								<td><input type = "text" class = "form-control input-sm"></td>
+					            								<th>문의</th>
+					            								<td><input type = "text" class = "form-control input-sm"></td>
+					            							</tr>
+					            							<tr>
+					            								<th>상태</th>
+					            								<td colspan = "3">
+					            									<label class = "form-controll-static"><input class = "" type = "radio" name = "state" value = "">준비중</label>
+					            									<label class = "form-controll-static"><input class = "" type = "radio" name = "state" value = "">모집중</label>
+					            									<label class = "form-controll-static"><input class = "" type = "radio" name = "state" value = "">모집마감</label>
+					            									<label class = "form-controll-static"><input class = "" type = "radio" name = "state" value = "">수업중</label>
+					            									<label class = "form-controll-static"><input class = "" type = "radio" name = "state" value = "">종료</label>
+					            								</td>
+					            								<th>기수</th>
+					            								<td><input type = "text" class = "form-control input-sm"></td>
+					            							</tr>
+					            						</form>
 				            						</table>
 				            						<div class = "sub-toolbox text-center">
 				            							<button type = "button" class = "btn btn-primary">수정</button>
@@ -263,6 +267,15 @@
 			            										<label class = "form-controll-static "><input class = "" type = "checkbox" name = "state" value = ""></label>
 			            									</td>
 			            								</tr>
+			            								<tr>
+			            									<td></td>
+			            									<td></td>
+			            									<td></td>
+			            									<td></td>
+			            									<td>
+			            										<label class = "form-controll-static "><input class = "" type = "checkbox" name = "state" value = ""></label>
+			            									</td>
+			            								</tr>
 			            							</table>
 			            						</div><!-- /.sub-box -->
 			            					</div><!-- /.sub-box col-xs-6 -->
@@ -278,6 +291,15 @@
 			            									<th>성별</th>
 			            									<th>전형결과</th>
 			            									<th>선택</th>
+			            								</tr>
+			            								<tr>
+			            									<td></td>
+			            									<td></td>
+			            									<td></td>
+			            									<td></td>
+			            									<td>
+			            										<label class = "form-controll-static "><input class = "" type = "checkbox" name = "state" value = ""></label>
+			            									</td>
 			            								</tr>
 			            								<tr>
 			            									<td></td>
@@ -341,23 +363,43 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-  <c:import url="/WEB-INF/views/includes/footer.jsp"></c:import>
-
+<c:import url="/WEB-INF/views/includes/footer.jsp"></c:import>
 	<div class="control-sidebar-bg"></div>
-
-
-
 </div>
 <!-- ./wrapper -->
+</body>
+</html>
+<c:import url="/WEB-INF/views/includes/script.jsp"></c:import>
 
-  
+<script>
+
+	function viewPackage(){
+		var newWindow;
+		var popUrl = "${pageContext.request.contextPath}/curri/curriPopUp";
+		newWindow = window.open(popUrl, "새 창", "width = 700, height = 600, toolbar = no, menubar = no, scrollbars = no, resizable = yes")
+		
+	}		
+/* 
+ 	$(function(){
+
+	    $("#date1").datepicker();
+
+	});
+ 	 */
+	 /* 
+	$('#addCurriBtn').click(function(){
+		$('#addCurriForm').reset();
+	});
+	 */
+	 /* 
+	 $('#addCurriBtn').click(function(){
+		 $('input[type = text]').each(function(){
+				$(this).val(""); 
+		 })
+		 
+	 });
+
+ */
+ </script>
+<%--jqgrid사용시 삭제할것--%>
+

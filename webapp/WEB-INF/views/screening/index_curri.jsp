@@ -133,12 +133,67 @@
 				            							</td>
 				            							<th>선택패키지</th>
 				            							<td>
-<%-- 				            								<a href = "${pageContext.request.contextPath }/curri/curriPopUp"><button type = "button" class = "btn btn-default btn-cate pull-right" id = "viewPackage" onclick = "window.location.href='/curri/curriPopUp'">패키지 보기</button></a> --%>
-				            								<button type = "button" class = "btn btn-default btn-cate pull-right" id = "viewPackage" onclick="javascript:viewPackage();">패키지 보기</button>
+				            								<button type = "button" class = "btn btn-default btn-cate btn-lg pull-right" id = "myBtn">패키지보기</button>
 				            							</td>
 				            						</tr>
 				            					</tbody>
 				            				</table>
+				            				
+           								<div class = "modal fade" id = "myModal" role = "dialog"><!-- 모달 시작! -->
+           									<div class = "modal-dialog">
+           										<div class = "modal-content" style = "width : 500px;">
+           											<div class = "modal-header">
+           												<button type = "button" class = "close" data-dismiss = "modal">x</button>
+           												<h4 class = "modal-title">Modal Header</h4>
+           											</div> 
+           											<div class = "modal-body">
+           												<div class = "row">
+
+
+																<div class = "box box-body" style = "padding : 10px 10px 10px 10px;">
+																
+																	<div class = "row">
+																		<!-- 카테고리영역 -->
+																			<div class = "sub-box">
+																				<div class = "cate-title">
+																					패키지선택
+																				</div><!-- cate-title -->
+																				<ul class = "nav nav-tabs">
+																					<li class = "active"><a data-toggle = "tab" href = "#tab_1">카테고리</a></li>
+																					<li><a data-toggle = "tab" href = "#tab_2">검색</a></li>
+																				</ul>
+																				<div class = "cate-outter bordered">
+																					<div class = "scroll">
+																						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+																	            		<br><br><br><br><br><br><br><br><br>
+																					</div><!-- /.sub-body -->
+																				
+																				</div><!-- /.cate-outter -->
+																				
+																				<div class = "cate-toolbox">
+																					<div class = "sub-toolbox text-center">
+																            			<button type = "button" class = "btn " style = "background-color : #3c8dbc; border-color: #367fa9; color: white;">선택</button>
+																            			<button type = "button" class = "btn pull-right" style = "background-color : #3c8dbc; border-color: #367fa9; color: white;">취소</button>
+																            		</div>
+																				</div><!-- /.cate-toolbox -->
+																			</div><!-- /.sub-box -->
+																		<!-- /.카테고리영역 -->
+																		
+																		<!-- 교육과정 정보영역 -->
+																		
+																
+																</div>
+															</div>
+														
+														</div>
+           											</div><!-- /.modal-body -->
+           									
+           										
+           										</div>
+           									
+           									</div>
+           								
+           								</div><!-- 모달 -->
 				            			</div><!-- 1번 탭 /.row -->
 				            			
 				            			<div class = "row">
@@ -372,34 +427,14 @@
 <c:import url="/WEB-INF/views/includes/script.jsp"></c:import>
 
 <script>
-
-	function viewPackage(){
-		var newWindow;
-		var popUrl = "${pageContext.request.contextPath}/curri/curriPopUp";
-		newWindow = window.open(popUrl, "새 창", "width = 700, height = 600, toolbar = no, menubar = no, scrollbars = no, resizable = yes")
-		
-	}		
-/* 
- 	$(function(){
-
-	    $("#date1").datepicker();
-
+	$(document).ready(function(){
+		$("#myBtn").click(function(){
+			$("#myModal").modal();
+		});
 	});
- 	 */
-	 /* 
-	$('#addCurriBtn').click(function(){
-		$('#addCurriForm').reset();
-	});
-	 */
-	 /* 
-	 $('#addCurriBtn').click(function(){
-		 $('input[type = text]').each(function(){
-				$(this).val(""); 
-		 })
-		 
-	 });
 
- */
+
+
  </script>
 <%--jqgrid사용시 삭제할것--%>
 

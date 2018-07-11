@@ -73,8 +73,8 @@
 			 								<tr>
 												<td>
 			                    					<select class="form-control input-sm">
-			                    						<c:forEach items = "${curriList}" var = "curriList">
-			                    							<option>${curriList.WorkType}</option>
+			                    						<c:forEach items = "${requestScope.curriList}" var = "curriList">
+			                    							<option>${curriList.workType}</option>
 			                    						</c:forEach>
 			                  						</select>
 			                  					</td>
