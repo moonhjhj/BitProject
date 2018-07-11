@@ -13,7 +13,7 @@
 <div class="content-wrapper">
     
 	<!-- Content Header (Page header) -->
-	<section class="content-header">
+	<section class="content-heade">
 		<h1>패키지관리
 			<small>it all starts here</small>
 		</h1>
