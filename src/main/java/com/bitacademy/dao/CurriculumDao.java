@@ -15,10 +15,10 @@ public class CurriculumDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public CurriculumVo viewCurriculum( ){
+	public CurriculumVo viewCurriculum(String type ){
 		System.out.println("[curriDao] viewCurriculum");
 		
-		return sqlSession.selectOne("curriculum", "viewCurriculum");
+		return sqlSession.selectOne("curriculum.viewCurriculum",type);
 	}
 //	public List<CurriculumVo> viewCurriculum( ){
 //		System.out.println("[curriDao] viewCurriculum");

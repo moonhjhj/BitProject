@@ -16,11 +16,11 @@ public class CurriculumService {
 	private CurriculumDao curriDao;
 	
 	
-	public CurriculumVo viewCurriculum(){
+	public CurriculumVo viewCurriculum(String type){
 		
 		System.out.println("[CurriService] viewCurriculum");
 		
-		return curriDao.viewCurriculum();
+		return curriDao.viewCurriculum(type);
 	}
 	
 //	public List<CurriculumVo> viewCurriculum(){

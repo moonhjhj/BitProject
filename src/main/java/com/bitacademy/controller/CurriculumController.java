@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -71,10 +72,14 @@ public class CurriculumController {
 		return "screening/index_curri";
 	}
 	
-	@RequestMapping(value = "")
-	public String viewCurriculum(Model model) {
+//	@RequestMapping(value = "")
+//	public String viewCurriculum( Model model) {
+	
+	@RequestMapping(value = "/curriInfo/{type}")
+	public String viewCurriculum(@PathVariable String type, Model model) {
 		System.out.println("[curriController] IN");
-		CurriculumVo curriVo = curriService.viewCurriculum();
+		
+		CurriculumVo curriVo = curriService.viewCurriculum(type);
 		model.addAttribute("curriList", curriVo);
 		System.out.println("curriList toString" + curriVo.toString());
 		

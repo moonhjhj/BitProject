@@ -8,12 +8,13 @@
 	
 	</resultMap>
  -->
-	<select id="viewCurriculum" parameterType="com.bitacademy.vo.CurriculumVo" >
+<!-- 	<select id="viewCurriculum" parameterType="com.bitacademy.vo.CurriculumVo" > -->
+	<select id="viewCurriculum" parameterType="String" resultType="com.bitacademy.vo.CurriculumVo" >
 		<![CDATA[
 		
 			select curriculum_no, package_no, curriName, periodFr, periodTo, startDay, time, num, money, support, inquiry, state
 			from Curriculum
-			where curriculum_no = 2
+			where curriculum_no = #{type}
 			
 		]]>
 	</select> 
