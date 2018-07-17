@@ -56,8 +56,16 @@ public class CurriculumController {
 	@RequestMapping(value = "/curriInfo")
 	public String viewCurriculumInfo(Model model, @RequestParam("curriculum_no") int curriculum_no) {
 		System.out.println("[curriController] IN");
+		
+		//1안
 		List<CurriculumVo> curriList = curriService.viewCurriculumInfo(curriculum_no);
-		model.addAttribute("curriList", curriList);
+//		model.addAttribute("curriList", curriList);
+		model.addAttribute("curri", curriList.get(0));
+		
+		//2안
+		CurriculumVo curri = curriService.viewCurriculumInfo2(curriculum_no);
+		model.addAttribute("curri",curri);
+		
 		
 		
 		return "screening/index_curri";

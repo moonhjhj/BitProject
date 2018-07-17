@@ -166,7 +166,7 @@
 																	<tr>
 																		<th>교육과정명</th>
 																		<td colspan="3">
-																			<input class="form-control input-sm" type="text" style="width: 98%;" value="${curriList.curriName }">
+																			<input class="form-control input-sm" type="text" style="width: 98%;" value="${curri.curriName }">
 																		</td>
 																		<th>과목별명</th>
 																		<td>
@@ -177,7 +177,7 @@
 																		<th>시작일</th>
 																		<td>
 																			<div class="input-group date">
-																				<input type="text" class="form-control input-sm pull-right" id="datepicker" value="${curriList.periodFr }">
+																				<input type="text" class="form-control input-sm pull-right" id="datepicker" value="${curri.periodFr }">
 																				<div class="input-group-addon input-sm">
 																					<i class="fa fa-calendar"></i>
 																				</div>
@@ -186,7 +186,7 @@
 																		<th>종료일</th>
 																		<td>
 																			<div class="input-group date">
-																				<input type="text" class="form-control input-sm pull-right" id="datepicker" value="${curriList.periodTo }">
+																				<input type="text" class="form-control input-sm pull-right" id="datepicker" value="${curri.periodTo }">
 																				<div class="input-group-addon input-sm">
 																					<i class="fa fa-calendar"></i>
 																				</div>
@@ -195,7 +195,7 @@
 																		<th>전형일(개강일)</th>
 																		<td>
 																			<div class="input-group date">
-																				<input type="text" class="form-control input-sm pull-right" id="datepicker" value="${curriList.startDay }">
+																				<input type="text" class="form-control input-sm pull-right" id="datepicker" value="${curri.startDay }">
 																				<div class="input-group-addon input-sm">
 																					<i class="fa fa-calendar"></i>
 																				</div>
@@ -205,34 +205,34 @@
 																	<tr>
 																		<th>강의시간</th>
 																		<td colspan="3">
-																			<input type="text" class="form-control input-sm " style="width: 98%;" value="${curriList.time }">
+																			<input type="text" class="form-control input-sm " style="width: 98%;" value="${curri.time }">
 																		</td>
 																		<th>정원</th>
 																		<td>
-																			<input type="text" class=" input-xs " value="${curriList.num }">명
+																			<input type="text" class=" input-xs " value="${curri.num }">명
 																		</td>
 																	</tr>
 																	<tr>
 																		<th>교육비용</th>
 																		<td>
-																			<input type="text" class="form-control input-sm" value="${curriList.money }">
+																			<input type="text" class="form-control input-sm" value="${curri.money }">
 																		</td>
 																		<th>교육비지원</th>
 																		<td>
-																			<input type="text" class="form-control input-sm" value="${curriList.support }">
+																			<input type="text" class="form-control input-sm" value="${curri.support }">
 																		</td>
 																		<th>문의</th>
 																		<td>
-																			<input type="text" class="form-control input-sm" value="${curriList.inquiry }">
+																			<input type="text" class="form-control input-sm" value="${curri.inquiry }">
 																		</td>
 																	</tr>
 																	<tr>
 																		<th>상태</th>
-																		<td colspan="3"><label class="form-controll-static"><input class="" type="radio" name="curriState" value="준비중" ${curriList.state == '준비중'?'checked':'' }>준비중</label>
-																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="모집중" ${curriList.state == '모집중'?'checked':'' }>모집중</label>
-																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="모집마감" ${curriList.state == '모집마감'?'checked':'' }>모집마감</label>
-																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="수업중" ${curriList.state == '수업중'?'checked':'' }>수업중</label>
-																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="종료" ${curriList.state == '종료'?'checked':'' }>종료</label>
+																		<td colspan="3"><label class="form-controll-static"><input class="" type="radio" name="curriState" value="준비중" ${curri.state == '준비중'?'checked':'' }>준비중</label>
+																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="모집중" ${curri.state == '모집중'?'checked':'' }>모집중</label>
+																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="모집마감" ${curri.state == '모집마감'?'checked':'' }>모집마감</label>
+																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="수업중" ${curri.state == '수업중'?'checked':'' }>수업중</label>
+																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="종료" ${curri.state == '종료'?'checked':'' }>종료</label>
 																		</td>
 																		<th>기수</th>
 																		<td><input type="text" class="form-control input-sm"></td>

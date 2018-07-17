@@ -38,6 +38,15 @@
 			where curriculum_no = #{curriculum_no}
 			
 		]]>
+	</select>
+	 
+	<select id="viewCurriculumInfo2" parameterType="int" resultType="com.bitacademy.vo.CurriculumVo">
+		<![CDATA[
+			SELECT 	curriculum_no, package_no, curriName, periodFr, periodTo, startDay, time, num, money, support, inquiry, state
+			FROM 	Curriculum
+			WHERE	curriculum_no = #{curriculum_no}
+			LIMIT	1
+		]]>
 	</select> 
 	<!-- 
 	<select id = "studentManagement" parameterType = "String" resultType = "com.bitacademy.vo.ApplicantVo">

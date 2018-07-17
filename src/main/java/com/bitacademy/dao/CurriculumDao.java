@@ -30,6 +30,12 @@ public class CurriculumDao {
 		
 		return sqlSession.selectList("curriculum.viewCurriculumInfo", curriculum_no);
 	}
+
+	public CurriculumVo viewCurriculumInfo2(int curriculum_no){
+		System.out.println("[curriDao] viewCurriculum");
+		
+		return sqlSession.selectOne("curriculum.viewCurriculumInfo2", curriculum_no);
+	}
 	
 	public List<ApplicantVo> studentManagement(){
 		System.out.println("[curriDao] studentManagement");

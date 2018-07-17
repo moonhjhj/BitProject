@@ -38,6 +38,13 @@ public class CurriculumService {
 		return curriDao.viewCurriculumInfo(curriculum_no);
 	}
 
+	public CurriculumVo viewCurriculumInfo2(int curriculum_no){
+		
+		System.out.println("[CurriService] viewCurriculum");
+		
+		return curriDao.viewCurriculumInfo2(curriculum_no);
+	}
+
 	
 	public List<ApplicantVo> studentManagement(){
 		
