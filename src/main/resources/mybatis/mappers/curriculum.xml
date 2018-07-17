@@ -3,13 +3,63 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="curriculum">
 <!-- 
-	<select id="" parameterType="" resultType="">
+	<resultMap type = "com.bitacademy.vo.ApplicantVo" id = "resultMapList">
+		<result column = ""
+	
+	</resultMap>
+ -->
+	<select id="viewCurriculum" parameterType="com.bitacademy.vo.CurriculumVo" >
 		<![CDATA[
 		
+			select curriculum_no, package_no, curriName, periodFr, periodTo, startDay, time, num, money, support, inquiry, state
+			from Curriculum
+			where curriculum_no = 2
+			
+		]]>
+	</select> 
+	<!-- 
+	
+	<select id="viewCurriculum" parameterType="String" resultType="com.bitacademy.vo.CurriculumVo">
+		<![CDATA[
 		
-		
+			select curriculum_no, package_no, curriName, periodFr, periodTo, startDay, time, num, money, support, inquiry, state
+			from Curriculum
+			where curriculum_no = 2
+			
 		]]>
 	</select> 
 	
 	 -->
+	<select id="viewCurriculumInfo" parameterType="int" resultType="com.bitacademy.vo.CurriculumVo">
+		<![CDATA[
+		
+			select curriculum_no, package_no, curriName, periodFr, periodTo, startDay, time, num, money, support, inquiry, state
+			from Curriculum
+			where curriculum_no = #{curriculum_no}
+			
+		]]>
+	</select> 
+	<!-- 
+	<select id = "studentManagement" parameterType = "String" resultType = "com.bitacademy.vo.ApplicantVo">
+		<![CDATA[
+		
+			select  u.User_no, u.NameHan, u.BirthDate, a.TestResult
+			from Users as u, ApplyInfo as a
+			where u.User_no = a.User_no
+		
+		]]>
+	
+	</select>
+	 -->
+	<select id = "studentManagement"  resultType = "com.bitacademy.vo.ApplicantVo">
+		<![CDATA[
+		
+			select  u.user_no, u.nameHan, u.birthDate, a.testResult, c.curriname
+			from Users as u, ApplyInfo as a, Curriculum as c
+			where u.User_no = a.User_no and c.curriculum_no = 1
+		
+		]]>
+	
+	</select>
+	
 </mapper>
