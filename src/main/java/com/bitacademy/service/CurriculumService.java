@@ -35,12 +35,12 @@ public class CurriculumService {
 	}
 
 	
-	public List<ApplicantVo> studentManagement(){
-		
-		System.out.println("CurriService] studentManagement IN");
-		return curriDao.studentManagement();
-	}
-	
+//	public List<ApplicantVo> studentManagement(){
+//		
+//		System.out.println("CurriService] studentManagement IN");
+//		return curriDao.studentManagement();
+//	}
+//	
 	//리스트로 받을 때
 //	public List<CurriculumVo> viewCurriculumInfo(int curriculum_no){
 //		
