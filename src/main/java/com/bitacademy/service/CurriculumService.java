@@ -24,7 +24,6 @@ public class CurriculumService {
  	}
 	
 	public int edit(CurriculumVo curriVo) {
-		
 		System.out.println("[CurriService] edit IN");
 		return curriDao.edit(curriVo);
 	}

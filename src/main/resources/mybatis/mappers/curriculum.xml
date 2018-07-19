@@ -2,13 +2,15 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="curriculum">
+
 	<select id="viewCurriculum" parameterType="String" resultType="com.bitacademy.vo.CurriculumVo" >
  		<![CDATA[
- 			select c.curriculum_no, c.package_no, c.curriName, c.periodFr, c.periodTo, c.startDay, c.time, c.num, c.money, c.support, c.inquiry, c.state, g.gisuName
- 			from Curriculum as c, Gisu as g
-			where c.curriculum_no and g.curriculum_no = #{curriculum_no} and c.package_no = #{package_no}
+ 			SELECT c.curriculum_no, c.package_no, c.curriName, c.periodFr, c.periodTo, c.startDay, c.time, c.num, c.money, c.support, c.inquiry, c.state, g.gisuName
+ 			FROM Curriculum as c, Gisu as g
+			WHERE c.curriculum_no and g.curriculum_no = #{curriculum_no} and c.package_no = #{package_no}
  		]]>
  	</select> 
+ 	
  	<update id = "edit" parameterType = "com.bitacademy.vo.CurriculumVo">
  		<![CDATA[
  			UPDATE Curriculum
@@ -23,7 +25,7 @@
  			, support = #{support}
  			, inquiry = #{inquiry}
  			, state = #{state}
- 			where curriculum_no = #{curriculum_no}
+ 			WHERE curriculum_no = #{curriculum_no}
  		]]>
  	</update>
  	<insert id="addCurri" parameterType = "com.bitacademy.vo.CurriculumVo">
@@ -47,15 +49,12 @@
  		]]>
  	</insert>
 	<select id = "studentManagement"  resultType = "com.bitacademy.vo.ApplicantVo">
-		<![CDATA[
+			SELECT  u.user_no, u.nameHan, u.birthDate, a.testResult, c.curriname
+			FROM Users as u, ApplyInfo as a, Curriculum as c
+			WHERE u.User_no = a.User_no and c.curriculum_no = 1
 		
-			select  u.user_no, u.nameHan, u.birthDate, a.testResult, c.curriname
-			from Users as u, ApplyInfo as a, Curriculum as c
-			where u.User_no = a.User_no and c.curriculum_no = 1
-		
-		]]>
-	
 	</select>
+	
 	
 	<!-- 
 	
