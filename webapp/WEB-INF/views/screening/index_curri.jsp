@@ -36,6 +36,7 @@
 					<li><a href="#">교육과정관리</a></li>
 				</ol>
 			</section>
+			
 			<!-- Main content -->
 			<section class="content">
 				<div class="row" id = "row-1">
