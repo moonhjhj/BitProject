@@ -56,14 +56,14 @@
 										<!-- 상단탭영역 -->
 										<ul class="nav nav-tabs" id="curri-nav-tab">
 											<li class="active"><a href="#tab_1" data-toggle="tab">교육과정 정보</a></li>
-											<%-- 									<li class = "active"><a href = "${pageContext.request.contextPath }/curri/curriInfo" >교육과정 정보</a></li> --%>
+<%-- 																				<li class = "active"><a href = "${pageContext.request.contextPath }/curri/curriInfo" >교육과정 정보</a></li> --%>
 											<li class=""><a href="#tab_2" data-toggle="tab">홈페이지관리</a></li>
 											<li class=""><a href="#tab_3" data-toggle="tab">교육생관리</a></li>
-											<%-- 									<li class = ""><a href = "${pageContext.request.contextPath }/curri/student" >교육생관리</a></li> --%>
+<%-- 																				<li class = ""><a href = "${pageContext.request.contextPath }/curri/student" >교육생관리</a></li> --%>
 											<li class=""><a href="#tab_4" data-toggle="tab">강사배정</a></li>
 											<li class=""><a href="#tab_5" data-toggle="tab">강의실배정</a></li>
 											<div class="sub-toolbox text-center">
-												<a href="${pageContext.request.contextPath }/curri/addCurri">
+												<a href="${pageContext.request.contextPath }/curri/addCurriBtn">
 													<button type="button" class="btn btn-default pull-right" id="addCurriBtn">교육과정 추가</button>
 												</a>
 											</div>
@@ -97,6 +97,8 @@
 															</tr>
 														</tbody>
 													</table>
+													
+													
 												<!-- 모달 시작! -->
 													<div class="modal fade" id="myModal" role="dialog">
 														<div class="modal-dialog">
@@ -152,11 +154,14 @@
 															</div><!-- modal-content -->
 														</div><!-- /.modal-dialog -->
 													</div><!-- /.modal-fade -->
+													
+												
 												</div>
 												<!-- 1번 탭 /.row -->
 												<div class="row">
 													<div class="sub-box">
-<%-- 														<c:forEach items="${curriList }" var="curriList"> --%>
+													<!-- /////////////////////////////////////////////////////////////////////////////// -->
+														<form action = "${pageContext.request.contextPath }/curri/edit/${curriculum_no}" method = "post">
 															<div class="sub-title" style="padding: 10px 0 0 0;">
 																기본정보
 															</div>
@@ -166,7 +171,7 @@
 																	<tr>
 																		<th>교육과정명</th>
 																		<td colspan="3">
-																			<input class="form-control input-sm" type="text" style="width: 98%;" value="${curri.curriName }">
+																			<input class="form-control input-sm" type="text" style="width: 98%;" name = "curriName" value="${curri.curriName }">
 																		</td>
 																		<th>과목별명</th>
 																		<td>
@@ -177,7 +182,7 @@
 																		<th>시작일</th>
 																		<td>
 																			<div class="input-group date">
-																				<input type="text" class="form-control input-sm pull-right" id="datepicker" value="${curri.periodFr }">
+																				<input type="text" class="form-control input-sm pull-right" id="datepicker" name = "periodFr" value="${curri.periodFr }">
 																				<div class="input-group-addon input-sm">
 																					<i class="fa fa-calendar"></i>
 																				</div>
@@ -186,7 +191,7 @@
 																		<th>종료일</th>
 																		<td>
 																			<div class="input-group date">
-																				<input type="text" class="form-control input-sm pull-right" id="datepicker" value="${curri.periodTo }">
+																				<input type="text" class="form-control input-sm pull-right" id="datepicker" name = "periodTo" value="${curri.periodTo }">
 																				<div class="input-group-addon input-sm">
 																					<i class="fa fa-calendar"></i>
 																				</div>
@@ -195,7 +200,7 @@
 																		<th>전형일(개강일)</th>
 																		<td>
 																			<div class="input-group date">
-																				<input type="text" class="form-control input-sm pull-right" id="datepicker" value="${curri.startDay }">
+																				<input type="text" class="form-control input-sm pull-right" id="datepicker" name = "startDay" value="${curri.startDay }">
 																				<div class="input-group-addon input-sm">
 																					<i class="fa fa-calendar"></i>
 																				</div>
@@ -205,52 +210,85 @@
 																	<tr>
 																		<th>강의시간</th>
 																		<td colspan="3">
-																			<input type="text" class="form-control input-sm " style="width: 98%;" value="${curri.time }">
+																			<input type="text" class="form-control input-sm " style="width: 98%;" name = "time" value="${curri.time }">
 																		</td>
 																		<th>정원</th>
 																		<td>
-																			<input type="text" class=" input-xs " value="${curri.num }">명
+																			<input type="text" class=" input-xs " name = "num" value="${curri.num }">명
 																		</td>
 																	</tr>
 																	<tr>
 																		<th>교육비용</th>
 																		<td>
-																			<input type="text" class="form-control input-sm" value="${curri.money }">
+																			<input type="text" class="form-control input-sm" name = "money" value="${curri.money }">
 																		</td>
 																		<th>교육비지원</th>
 																		<td>
-																			<input type="text" class="form-control input-sm" value="${curri.support }">
+																			<input type="text" class="form-control input-sm" name = "support" value="${curri.support }">
 																		</td>
 																		<th>문의</th>
 																		<td>
-																			<input type="text" class="form-control input-sm" value="${curri.inquiry }">
+																			<input type="text" class="form-control input-sm" name = "inquiry" value="${curri.inquiry }">
 																		</td>
 																	</tr>
 																	<tr>
 																		<th>상태</th>
-																		<td colspan="3"><label class="form-controll-static"><input class="" type="radio" name="curriState" value="준비중" ${curri.state == '준비중'?'checked':'' }>준비중</label>
-																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="모집중" ${curri.state == '모집중'?'checked':'' }>모집중</label>
-																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="모집마감" ${curri.state == '모집마감'?'checked':'' }>모집마감</label>
-																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="수업중" ${curri.state == '수업중'?'checked':'' }>수업중</label>
-																			<label class="form-controll-static"><input class="" type="radio" name="curriState" value="종료" ${curri.state == '종료'?'checked':'' }>종료</label>
+																		<td colspan="3"><label class="form-controll-static"><input class="" type="radio" name="state" value="준비중" ${curri.state == '준비중'?'checked':'' }>준비중</label>
+																			<label class="form-controll-static"><input class="" type="radio" name="state" value="모집중" ${curri.state == '모집중'?'checked':'' }>모집중</label>
+																			<label class="form-controll-static"><input class="" type="radio" name="state" value="모집마감" ${curri.state == '모집마감'?'checked':'' }>모집마감</label>
+																			<label class="form-controll-static"><input class="" type="radio" name="state" value="수업중" ${curri.state == '수업중'?'checked':'' }>수업중</label>
+																			<label class="form-controll-static"><input class="" type="radio" name="state" value="종료" ${curri.state == '종료'?'checked':'' }>종료</label>
 																		</td>
 																		<th>기수</th>
-																		<td><input type="text" class="form-control input-sm"></td>
+																		<td><input type="text" class="form-control input-sm" value = "${curri.gisuName }"></td>
 																	</tr>
 																</form>
 															</table>
 															<div class="sub-toolbox text-center">
-																<button type="button" class="btn btn-primary">수정</button>
+<!-- 																<button type="button" class="btn btn-primary" >수정</button> -->
+																<input type = "submit" class = "btn btn-primary" value = "수정" >
 															</div>
-<%-- 														</c:forEach> --%>
+														</form>
+													<!-- /////////////////////////////////////////////////////////////////////////////// -->	
 													</div><!-- /.sub-box -->
 <!-- 																	            				</div>/.col-xs-12 -->
 												</div><!-- /.row -->
 											</div>
 											<!-- /.1번탭내용 tab-pane active -->
 											<!-- 2번탭내용 -->
-											<div class="tab-pane" id="tab_2"></div>
-											<!-- /.tab_2 -->
+											<div class="tab-pane" id="tab_2">
+												<div class = "row">
+													<table class = "table table-condensed">
+														<tr>
+															<th>교육과정명</th>
+															<td class = "col-xs-10"><input type = "text" readonly value = "" style = "width : 98%; border : none;"></td>
+														</tr>
+													</table>
+												</div><!-- /.tab2 row1 -->
+												<div class = "row" style = "padding : 10px 0 0 0;">
+													<table class = "table table-condensed">
+														<tr>
+															<th class = "col-xs-1">메인페이지</th>
+															<td class = "col-xs-5">
+																<label class="form-controll-static"><input class="" type="radio" name="mainViewFlag" value="노출" <%-- ${ == '0'?'checked':'' } --%>>노출</label>
+																<label class="form-controll-static"><input class="" type="radio" name="mainViewFlag" value="숨김" <%-- ${ == '1'?'checked':'' } --%>>숨김</label>
+															 	<button type="button" class="btn btn-default btn-cate btn-lg pull-right" id="myBtn">미리보기</button>
+															 </td>
+															<th class = "col-xs-1">상세페이지</th>
+															<td class = "col-xs-5">
+																<label class="form-controll-static"><input class="" type="radio" name="detailViewFlag" value="노출" <%-- ${ == '0'?'checked':'' } --%>>노출</label>
+																<label class="form-controll-static"><input class="" type="radio" name="detailViewFlag" value="숨김" <%-- ${ == '1'?'checked':'' } --%>>숨김</label>
+															 	<button type="button" class="btn btn-default btn-cate btn-lg pull-right" id="myBtn">미리보기</button>
+															</td>
+														</tr>
+													
+													</table>
+												
+												</div>
+											</div><!-- /.tab_2 -->
+											
+											
+											
 											<!-- 3번탭내용 -->
 											<div class="tab-pane" id="tab_3">
 												<div class="row">
@@ -320,8 +358,7 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td><label class="form-controll-static "><input
-																			class="" type="checkbox" name="state" value=""></label>
+																	<td><label class="form-controll-static "><input class="" type="checkbox" name="state" value=""></label>
 																	</td>
 																</tr>
 															</table>
@@ -369,12 +406,10 @@
 // 		var $test = $('.curriculum_no').html();
 // 		alert($test);
 // 	});
-
 // 	$("#viewCurriInfo").on("click", function(){
 // 		console.log("[viewCurriInfo] IN")
 // 		var curriculum_no = $("input[name = curriculum_no]").val();
 // 		console.log(curriculum_no);
-		
 // 	});
 $(document).ready(function(){	
 	$("#viewCurriInfo").on("click", function(){
@@ -383,7 +418,6 @@ $(document).ready(function(){
 		/* 데이터 모으기 */
 		var curriculum_no = $("[name = curriculum_no]").val();
 		console.log(curriculum_no);
-
 		/* 리스트 요청 ajax */
 		$.ajax({
 			
@@ -409,4 +443,3 @@ $(document).ready(function(){
 // 	});
 </script>
 <%--jqgrid사용시 삭제할것--%>
-

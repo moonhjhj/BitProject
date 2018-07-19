@@ -16,33 +16,23 @@ public class CurriculumService {
 	private CurriculumDao curriDao;
 	
 	
-	public CurriculumVo viewCurriculum(){
+	public CurriculumVo viewCurriculum(String curriculum_no){
+ 		
+ 		System.out.println("[CurriService] viewCurriculum");
+ 		
+		return curriDao.viewCurriculum(curriculum_no);
+ 	}
+	
+	public int edit(CurriculumVo curriVo) {
 		
-		System.out.println("[CurriService] viewCurriculum");
-		
-		return curriDao.viewCurriculum();
+		System.out.println("[CurriService] edit IN");
+		return curriDao.edit(curriVo);
 	}
 	
-//	public List<CurriculumVo> viewCurriculum(){
-//		
-//		System.out.println("[CurriService] viewCurriculum");
-//		
-//		return curriDao.viewCurriculum();
-//	}
-	
-	
-	public List<CurriculumVo> viewCurriculumInfo(int curriculum_no){
-		
-		System.out.println("[CurriService] viewCurriculum");
-		
-		return curriDao.viewCurriculumInfo(curriculum_no);
-	}
 
-	public CurriculumVo viewCurriculumInfo2(int curriculum_no){
+	public int addCurri(CurriculumVo curriVo) {
 		
-		System.out.println("[CurriService] viewCurriculum");
-		
-		return curriDao.viewCurriculumInfo2(curriculum_no);
+		return curriDao.addCurri(curriVo);
 	}
 
 	
@@ -51,4 +41,18 @@ public class CurriculumService {
 		System.out.println("CurriService] studentManagement IN");
 		return curriDao.studentManagement();
 	}
+	
+	//리스트로 받을 때
+//	public List<CurriculumVo> viewCurriculumInfo(int curriculum_no){
+//		
+//		System.out.println("[CurriService] viewCurriculum");
+//		
+//		return curriDao.viewCurriculumInfo(curriculum_no);
+//	}
+//	public List<CurriculumVo> viewCurriculum(){
+//		
+//		System.out.println("[CurriService] viewCurriculum");
+//		
+//		return curriDao.viewCurriculum();
+//	}
 }

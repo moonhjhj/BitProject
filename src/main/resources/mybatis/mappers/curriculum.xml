@@ -2,21 +2,61 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="curriculum">
-<!-- 
-	<resultMap type = "com.bitacademy.vo.ApplicantVo" id = "resultMapList">
-		<result column = ""
-	
-	</resultMap>
- -->
-	<select id="viewCurriculum" parameterType="com.bitacademy.vo.CurriculumVo" >
+	<select id="viewCurriculum" parameterType="String" resultType="com.bitacademy.vo.CurriculumVo" >
+ 		<![CDATA[
+ 			select c.curriculum_no, c.package_no, c.curriName, c.periodFr, c.periodTo, c.startDay, c.time, c.num, c.money, c.support, c.inquiry, c.state, g.gisuName
+ 			from Curriculum as c, Gisu as g
+			where c.curriculum_no and g.curriculum_no = #{curriculum_no} and c.package_no = #{package_no}
+ 		]]>
+ 	</select> 
+ 	<update id = "edit" parameterType = "com.bitacademy.vo.CurriculumVo">
+ 		<![CDATA[
+ 			UPDATE Curriculum
+ 			SET
+ 			curriName = #{curriName}
+ 			, periodFr = #{periodFr}
+ 			, periodTo = #{periodTo}
+ 			, startDay = #{startDay}
+ 			, time = #{time}
+ 			, num = #{num}
+ 			, money = #{money}
+ 			, support = #{support}
+ 			, inquiry = #{inquiry}
+ 			, state = #{state}
+ 			where curriculum_no = #{curriculum_no}
+ 		]]>
+ 	</update>
+ 	<insert id="addCurri" parameterType = "com.bitacademy.vo.CurriculumVo">
+ 		<![CDATA[
+ 			INSERT INTO Curriculum (curriculumCate_no, workType, curriName, periodFr, periodTo, startDay, time, num, money, support, inquiry, state, package_no)
+			VALUES(
+				(SELECT curriculumCate_no FROM CurriculumCate WHERE curriculumCate_no = #{curriculumCate_no}),
+				#{workType},
+				#{curriName},
+				#{periodFr},
+				#{periodTo},
+				#{startDay},
+				#{time},
+				#{num},
+				#{money},
+				#{support},
+				#{inquiry},
+				#{state},
+			    (SELECT package_no from Package WHERE package_no = #{package_no})
+			    );
+ 		]]>
+ 	</insert>
+	<select id = "studentManagement"  resultType = "com.bitacademy.vo.ApplicantVo">
 		<![CDATA[
 		
-			select curriculum_no, package_no, curriName, periodFr, periodTo, startDay, time, num, money, support, inquiry, state
-			from Curriculum
-			where curriculum_no = 2
-			
+			select  u.user_no, u.nameHan, u.birthDate, a.testResult, c.curriname
+			from Users as u, ApplyInfo as a, Curriculum as c
+			where u.User_no = a.User_no and c.curriculum_no = 1
+		
 		]]>
-	</select> 
+	
+	</select>
+	
 	<!-- 
 	
 	<select id="viewCurriculum" parameterType="String" resultType="com.bitacademy.vo.CurriculumVo">
@@ -30,6 +70,7 @@
 	</select> 
 	
 	 -->
+	 <!-- 
 	<select id="viewCurriculumInfo" parameterType="int" resultType="com.bitacademy.vo.CurriculumVo">
 		<![CDATA[
 		
@@ -39,15 +80,7 @@
 			
 		]]>
 	</select>
-	 
-	<select id="viewCurriculumInfo2" parameterType="int" resultType="com.bitacademy.vo.CurriculumVo">
-		<![CDATA[
-			SELECT 	curriculum_no, package_no, curriName, periodFr, periodTo, startDay, time, num, money, support, inquiry, state
-			FROM 	Curriculum
-			WHERE	curriculum_no = #{curriculum_no}
-			LIMIT	1
-		]]>
-	</select> 
+	  -->
 	<!-- 
 	<select id = "studentManagement" parameterType = "String" resultType = "com.bitacademy.vo.ApplicantVo">
 		<![CDATA[
@@ -60,15 +93,5 @@
 	
 	</select>
 	 -->
-	<select id = "studentManagement"  resultType = "com.bitacademy.vo.ApplicantVo">
-		<![CDATA[
-		
-			select  u.user_no, u.nameHan, u.birthDate, a.testResult, c.curriname
-			from Users as u, ApplyInfo as a, Curriculum as c
-			where u.User_no = a.User_no and c.curriculum_no = 1
-		
-		]]>
-	
-	</select>
 	
 </mapper>

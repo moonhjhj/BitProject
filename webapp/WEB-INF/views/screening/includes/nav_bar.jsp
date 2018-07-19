@@ -15,18 +15,26 @@
 		<div class = "scroll">
 			<!-- /////////////////////////////////////////////////// -->
 			   <div class="tab-content-custom" style="height: 500px;">
-			   		<div class="tab-pane active" id="tab_1">
+<!-- 			   		<div class="tab-pane active" id="tab_1"> -->
+			   		<div class="row">
                                  <ul class="side-bar test" data-widget="tree">
                                     <li class="treeview"> <a href="#"> <i class="fa fa-circle-o"></i> <span>기초언어</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                                        <ul class="treeview-menu">
                                           <li><a href="#"><i class="fa fa-circle-o"></i> C언어</a></li>
                                           <li class="treeview"> <a href="#"><i class="fa fa-circle-o"></i> JAVA <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                                              <ul class="treeview-menu">
-                                                <li><a href="${pageContext.request.contextPath }/curri/curriInfo?curriculum_no=${curriculum_no}" target="_self"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo" name = "curriculum_no" value = "1"> JAVA BASIC</a></li>
-                                                <li class="treeview"> <a href="#"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo"  name = "curriculum_no" value = "2">  JAVA EXPERT<span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+<%--                                                 <li><a href="${pageContext.request.contextPath }/curri/1" target="_self"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo" name = "curriculum_no" value = "1"> JAVA BASIC</a></li> --%>
+<%--                                                 <li class="treeview"> <a href="${pageContext.request.contextPath }/curri/${curriculum_no}"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo"  name = "curriculum_no" value = "2">  JAVA EXPERT<span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a> --%>
+<!--                                                    <ul class="treeview-menu"> -->
+<%--                                                       <li><a href="${pageContext.request.contextPath }/curri/${curriculum_no}"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo" name = "curriculum_no" value = "3">  JAVA WEB</a></li> --%>
+<%--                                                       <li><a href="${pageContext.request.contextPath }/curri/${curriculum_no}"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo"  name = "curriculum_no" value = "4">  SPRING</a></li> --%>
+<!--                                                    </ul> -->
+<!--                                                 </li> -->
+                                                <li><a href="${pageContext.request.contextPath }/curri/1" target="_self"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo" name = "curriculum_no" value = "1"> JAVA BASIC</a></li>
+                                                <li class="treeview"> <a href="${pageContext.request.contextPath }/curri/${curriculum_no}"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo"  name = "curriculum_no" value = "2">  JAVA EXPERT<span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                                                    <ul class="treeview-menu">
-                                                      <li><a href="#"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo" name = "curriculum_no" value = "3">  JAVA WEB</a></li>
-                                                      <li><a href="#"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo"  name = "curriculum_no" value = "4">  SPRING</a></li>
+                                                      <li><a href="${pageContext.request.contextPath }/curri/${curriculum_no}"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo" name = "curriculum_no" value = "3">  JAVA WEB</a></li>
+                                                      <li><a href="${pageContext.request.contextPath }/curri/${curriculum_no}"><i class="fa fa-circle-o"></i><input type = "hidden" id = "viewCurriInfo"  name = "curriculum_no" value = "4">  SPRING</a></li>
                                                    </ul>
                                                 </li>
                                              </ul>
@@ -53,12 +61,11 @@
                                        </ul>
                                     </li>
                                  </ul>
-                             </div>
+				</div><!-- /.tab-pane -->
 
-                              <!-- /.tab-pane -->
-                           </div>
+			</div><!-- tab-content -->
 			<!-- /////////////////////////////////////////////////// -->
-		</div><!-- /.sub-body -->
+		</div><!-- /.scroll -->
 	
 	</div><!-- /.cate-outter -->
 	
